@@ -1,0 +1,114 @@
+:root {
+    --sand: #f2d2a9;
+    --sunlight: #00b4d8;
+    --deep-blue: #023e8a;
+    --midnight-blue: #03045e;
+    --dark-void: #000000;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; text-align: center; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-void); color: white; overflow-x: hidden; }
+
+/* BARRA PROGRESO */
+.progress-container { position: fixed; top: 0; z-index: 1000; width: 100%; height: 8px; background: rgba(255,255,255,0.2); }
+.progress-bar { height: 8px; background: linear-gradient(to right, var(--sunlight), var(--deep-blue)); width: 0%; }
+
+/* HEADER */
+.beach-header { height: 100vh; background: var(--sand); display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden; }
+.sun-decoration { position: absolute; top: 10px; right: 10px; font-size: clamp(4rem, 12vw, 7rem); filter: drop-shadow(0 0 20px orange); z-index: 5; }
+.palm { position: absolute; font-size: clamp(10rem, 22vw, 16rem); bottom: -20px; z-index: 15; }
+.palm-left { left: -50px; transform: rotate(-15deg); }
+.palm-right { right: -50px; transform: rotate(15deg); }
+
+.header-content { z-index: 20; color: #5c4033; width: 90%; max-width: 800px; display: flex; flex-direction: column; align-items: center; padding-top: 40px; }
+.main-title { font-size: clamp(2.8rem, 9vw, 4.5rem); font-weight: 900; text-transform: uppercase; margin-bottom: 15px; line-height: 1; }
+.project-description { background: rgba(255,255,255,0.4); padding: 20px; border-radius: 20px; margin-bottom: 20px; font-weight: 600; line-height: 1.4; font-size: 0.95rem; width: 100%; }
+
+/* ARREGLO DE BOTONES PARA CELULAR */
+.header-nav { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 8px; 
+    width: 100%; 
+}
+.btn { 
+    text-decoration: none; background: #5c4033; color: white; padding: 10px 14px; 
+    border-radius: 25px; font-weight: 900; font-size: 0.75rem; border: 2px solid white; 
+    transition: 0.3s; flex: 0 1 auto; 
+}
+.btn:hover { background: white; color: #5c4033; border-color: #5c4033; }
+
+.sand-floor { position: absolute; bottom: 0; width: 100%; height: 40px; background: #e6be8a; border-radius: 50% 50% 0 0; }
+
+/* CUERPO DEL OCÉANO */
+.ocean-body { 
+    background: linear-gradient(to bottom, 
+        var(--sand) 0%, 
+        var(--sunlight) 5%, 
+        var(--deep-blue) 35%, 
+        var(--midnight-blue) 70%, 
+        var(--dark-void) 100%); 
+    position: relative; z-index: 2; 
+}
+
+.layer { min-height: 120vh; padding: 80px 5vw; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.zone-info { margin-bottom: 40px; max-width: 600px; }
+.zone-info h2 { font-size: clamp(2.2rem, 7vw, 3.2rem); font-weight: 900; margin-bottom: 10px; }
+
+/* ZIG-ZAG VERTICAL */
+.zigzag-container { 
+    display: flex; flex-direction: column; width: 100%; max-width: 500px; gap: 30px; margin: 0 auto; 
+}
+
+/* BURBUJAS GRANDES (180px) */
+.flip-card { width: 180px; height: 180px; perspective: 1000px; align-self: center; }
+.left { transform: translateX(-40px); }
+.right { transform: translateX(40px); }
+
+/* AJUSTE PARA COMPUTADOR */
+@media (min-width: 900px) {
+    .zigzag-container { flex-direction: row; flex-wrap: wrap; justify-content: center; max-width: 1100px; gap: 70px; }
+    .left, .right { transform: translateX(0); }
+    .flip-card:nth-child(even) { transform: translateY(50px); }
+    .btn { padding: 12px 20px; font-size: 0.85rem; }
+}
+
+.flip-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; }
+.flip-card:active .flip-inner, .flip-card:hover .flip-inner { transform: rotateY(180deg); }
+
+.flip-front, .flip-back {
+    position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 50%;
+    border: 4px solid white; overflow: hidden;
+}
+
+.flip-front { 
+    background: rgba(255,255,255,0.15); font-size: 5.5rem; backdrop-filter: blur(3px);
+    display: flex; justify-content: center; align-items: center;
+}
+
+.flip-back { 
+    background: var(--deep-blue); 
+    transform: rotateY(180deg); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.back-content {
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    width: 100%; height: 100%; padding: 15px;
+}
+
+.back-content span { font-size: 0.85rem; font-weight: 300; margin-bottom: 5px; display: block; width: 100%; }
+.back-content strong { font-size: 1.3rem; font-weight: 900; text-transform: uppercase; display: block; width: 100%; line-height: 1.1; }
+
+.final-footer { padding: 60px 20px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; width: 100%; font-size: 0.9rem;
+}
+
+.animal-img{
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
