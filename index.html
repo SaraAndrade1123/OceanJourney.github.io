@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Journey | Immersive English Learning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" href="https://images.icon-icons.com/4188/PNG/512/ocean_summer_oyster_fish_sea_blue_pearl_shells_game_icon_262428.png" type="image/x-icon">
+</head>
+<body>
+
+    <div id="welcome-screen">
+        <div class="welcome-bubbles"></div>
+        <div class="welcome-content">
+            <span class="welcome-badge">SENA PRESENTS</span>
+            <h1 class="welcome-title">Do you know about the sea?</h1>
+            <p class="welcome-subtitle">Dive into an interactive linguistic journey, test your vocabulary skills, and discover the mysterious secrets hidden across five deep-sea layers.</p>
+            <button id="start-journey-btn">Explore the Ocean 🌊</button>
+        </div>
+    </div>
+
+    <div id="main-project-content" class="hidden-content">
+        
+        <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
+
+        <header class="beach-header">
+            <div class="sun-decoration">☀️</div>
+            <div class="palm palm-left">🌴</div>
+            <div class="palm palm-right">🌴</div>
+            <div class="header-content">
+                <h1 class="main-title">Ocean Journey</h1>
+                <div class="project-description">
+                    <p>Welcome to <strong>"JUEGO DE ROL"</strong>, an immersive English vocabulary platform. Explore five deep-sea levels, discover unique species, and master the language of the ocean through this interactive journey.</p>
+                </div>
+                
+                <div class="search-box">
+                    <input type="text" id="speciesSearch" placeholder="Search a marine animal... (e.g., Whale)">
+                </div>
+
+                <nav class="header-nav">
+                    <a href="#sunlight" class="btn">Sunlight</a>
+                    <a href="#twilight" class="btn">Twilight</a>
+                    <a href="#midnight" class="btn">Midnight</a>
+                    <a href="#abyss" class="btn">Abyss</a>
+                    <a href="#trenches" class="btn">Trenches</a>
+                    <a href="#quiz-zone" class="btn" style="background: #2a9d8f;">Take the Quiz!</a>
+                </nav>
+            </div>
+            <div class="sand-floor"></div>
+        </header>
+
+        <main class="ocean-body">
+            <section class="layer" id="sunlight">
+                <div class="zone-info">
+                    <h2>Sunlight Zone</h2>
+                    <p>The top layer where sunlight is abundant, hosting the widest variety of colorful marine biodiversity.</p>
+                </div>
+                <div class="zigzag-container">
+                    <div class="flip-card left"><div class="flip-inner"><div class="flip-front">🐬</div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Dolphin</strong></div></div></div></div>
+                    <div class="flip-card right"><div class="flip-inner"><div class="flip-front">🐢</div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Turtle</strong></div></div></div></div>
+                    <div class="flip-card left"><div class="flip-inner"><div class="flip-front"><img src="https://img.pikbest.com/origin/09/08/69/07cpIkbEsTSGk.png!sw800" alt="Clownfish" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Clownfish</strong></div></div></div></div>
+                    <div class="flip-card right"><div class="flip-inner"><div class="flip-front">🦀</div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Crab</strong></div></div></div></div>
+                    <div class="flip-card left"><div class="flip-inner"><div class="flip-front">🦈</div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Shark</strong></div></div></div></div>
+                    <div class="flip-card right"><div class="flip-inner"><div class="flip-front">🐋</div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Whale</strong></div></div></div></div>
+                    <div class="flip-card left"><div class="flip-inner"><div class="flip-front">🐠</div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Tang Fish</strong></div></div></div></div>
+                    <div class="flip-card right"><div class="flip-inner"><div class="flip-front">🐙</div><div class="flip-back"><div class="back-content"><span>This is an</span><strong>Octopus</strong></div></div></div></div>
+                    <div class="flip-card left"><div class="flip-inner"><div class="flip-front">🦭</div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Sea Lion</strong></div></div></div></div>
+                </div>
+            </section>
+
+            <section class="layer" id="twilight">
+                <div class="zone-info">
+                    <h2>Twilight Zone</h2>
+                    <p>Only a small amount of light penetrates here. Creatures here have adapted to cold, dim environments.</p>
+                </div>
+                <div class="zigzag-container">
+                    <div class="flip-card left"><div class="flip-inner"><div class="flip-front">🪼</div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Jellyfish</strong></div></div></div></div>
+                    <div class="flip-card right"><div class="flip-inner"><div class="flip-front"><img src="https://images.vexels.com/media/users/3/180915/isolated/preview/020f31e7cb3ffd8caef2381fec09ee7b-lindo-pulpo-morado.png" alt="Octopus" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is an</span><strong>Octopus</strong></div></div></div></div>
+                    <div class="flip-card left"><div class="flip-inner"><div class="flip-front"><img src="https://png.pngtree.com/png-vector/20240731/ourmid/pngtree-giant-squid-png-image_13308475.png" alt="Squid" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Squid</strong></div></div></div></div>
+                    <div class="flip-card right"><div class="flip-inner"><div class="flip-front">🐡</div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Pufferfish</strong></div></div></div></div>
+                    <div class="flip-card left"><div class="flip-inner"><div class="flip-front">🦞</div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Lobster</strong></div></div></div></div>
+                    <div class="flip-card right"><div class="flip-inner"><div class="flip-front"><img src="https://img.pikbest.com/png-images/20240909/detailed-shrimp-prawn-line-art-illustration-drawing-seafood-vector_10823269.png!sw800" alt="Shrimp" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Shrimp</strong></div></div></div></div>
+                    <div class="flip-card left"><div class="flip-inner"><div class="flip-front">🐟</div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Barracuda</strong></div></div></div></div>
+                    <div class="flip-card right"><div class="flip-inner"><div class="flip-front">🦑</div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Cuttlefish</strong></div></div></div></div>
+                </div>
+            </section>
+
+            <section class="layer" id="midnight">
+                <div class="zone-info">
+                    <h2>Midnight Zone</h2>
+                    <p>Total darkness scales here. The unique animals living inside this layer generate their own bioluminescent light.</p>
+                </div>
+                <div class="zigzag-container">
+                    <div class="flip-card left"><div class="flip-inner"><div class="flip-front"><img src="https://png.pngtree.com/png-vector/20220525/ourmid/pngtree-isolated-angler-fish-lophius-piscatorius-in-bright-tropical-colors-in-the-underwater-world-vector-png-image_30482660.png" alt="Anglerfish" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is an</span><strong>Anglerfish</strong></div></div></div></div>
+                    <div class="flip-card right"><div class="flip-inner"><div class="flip-front"><img src="https://static.vecteezy.com/system/resources/previews/023/839/776/non_2x/lanternfish-isolated-on-a-transparent-background-free-png.png" alt="Lanternfish" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Lanternfish</strong></div></div></div></div>
+                    <div class="flip-card left"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.pixabay.com/photo/2024/12/04/21/56/animal-9245448_640.png" alt="Dragonfish" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Dragonfish</strong></div></div></div></div>
+                    <div class="flip-card right"><div class="flip-inner"><div class="flip-front"><img src="https://static.vecteezy.com/system/resources/thumbnails/059/035/576/small_2x/vampire-squid-spreading-webbed-tentacles-deep-ocean-marine-life-mysterious-environment-underwater-view-nature-s-wonders-free-png.png" alt="Vampire Squid" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Vampire Squid</strong></div></div></div></div>
+                    <div class="flip-card left"><div class="flip-inner"><div class="flip-front"><img src="https://static.wikitide.net/fischwiki/c/c2/Deep-sea_Hatchetfish.png?version=2e8062efe68befe162ea78657a09b0ec" alt="Hatchetfish" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Hatchetfish</strong></div></div></div></div>
+                    <div class="flip-card right"><div class="flip-inner"><div class="flip-front"><img src="https://png.pngtree.com/png-vector/20241116/ourmid/pngtree-sea-snail-isolated-white-backdrop-png-image_14425544.png" alt="Sea Snail" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Sea Snail</strong></div></div></div></div>
+                </div>
+            </section>
+
+            <section class="layer" id="abyss">
+                <div class="zone-info">
+                    <h2>The Abyss</h2>
+                    <p>Near-freezing water temperatures combined with extreme pressure. Only highly specialized invertebrates thrive here.</p>
+                </div>
+                <div class="zigzag-container">
+                    <div class="flip-card left"><div class="flip-inner"><div class="flip-front"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/59c46321-f346-4707-af69-a59f1115d95d/dfqznsr-7ddd6b5b-517b-4213-b9e2-51fde3591b8c.png/v1/fit/w_400,h_400/dumbo_octopus_by_tokotime_dfqznsr-375w-2x.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDAwIiwicGF0aCI6Ii9mLzU5YzQ2MzIxLWYzNDYtNDcwNy1hZjY5LWE1OWYxMTE1ZDk1ZC9kZnF6bnNyLTdkZGQ2YjViLTUxN2ItNDIxMy1iOWUyLTUxZmRlMzU5MWI4Yy5wbmciLCJ3aWR0aCI6Ijw9NDAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.W4v7oEjhj77kkATlXxYZ0WDVA_DhdWY3-qeGT74E_L8" alt="Dumbo Octopus" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Dumbo Octopus</strong></div></div></div></div>
+                    <div class="flip-card right"><div class="flip-inner"><div class="flip-front"><img src="https://static.wikia.nocookie.net/zt2downloadlibrary/images/b/b0/Sea_Spider_%28Whalebite%29.png/revision/latest?cb=20170615233105" alt="Sea Spider" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Sea Spider</strong></div></div></div></div>
+                    <div class="flip-card left"><div class="flip-inner"><div class="flip-front"><img src="https://earthguide.ucsd.edu/fishes/environment/0_images/pngs/tripod.png" alt="Tripod Fish" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Tripod Fish</strong></div></div></div></div>
+                    <div class="flip-card right"><div class="flip-inner"><div class="flip-front"><img src="https://media.marinewise.com.au/wp-content/uploads/2021/10/24123433/Blackfin-Ghostshark-Marinewise.png" alt="Ghost Shark" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Ghost Shark</strong></div></div></div></div>
+                    <div class="flip-card left"><div class="flip-inner"><div class="flip-front"><img src="https://static.wikia.nocookie.net/zt2downloadlibrary/images/3/3c/Giant_Tube_Worm_%28The_Restorers%29.png/revision/latest?cb=20220916170032" alt="Tube Worm" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Tube Worm</strong></div></div></div></div>
+                    <div class="flip-card right"><div class="flip-inner"><div class="flip-front"><img src="https://png.pngtree.com/png-clipart/20230814/original/pngtree-multilegged-giant-isopod-against-a-white-background-animals-insect-natural-vector-picture-image_10666051.png" alt="Isopod" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is an</span><strong>Isopod</strong></div></div></div></div>
+                </div>
+            </section>
+
+            <section class="layer" id="trenches">
+                <div class="zone-info">
+                    <h2>The Trenches</h2>
+                    <p>The deepest underwater canyons on planet Earth. Completely dark, yet full of basic bacterial life structures.</p>
+                </div>
+                <div class="zigzag-container">
+                    <div class="flip-card left"><div class="flip-inner"><div class="flip-front"><img src="https://static.vecteezy.com/system/resources/thumbnails/040/323/543/small/ai-generated-bacteria-isolated-on-transparent-background-free-png.png" alt="Bacteria" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is</span><strong>Bacteria</strong></div></div></div></div>
+                    <div class="flip-card right"><div class="flip-inner"><div class="flip-front"><img src="https://png.pngtree.com/png-vector/20241107/ourmid/pngtree-sea-cucumber-with-red-bumps-illustration-png-image_14285518.png" alt="Sea Cucumber" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Sea Cucumber</strong></div></div></div></div>
+                    <div class="flip-card left"><div class="flip-inner"><div class="flip-front"><img src="https://static.vecteezy.com/system/resources/thumbnails/023/839/807/small/amphipod-isolated-on-a-transparent-background-free-png.png" alt="Amphipod" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is an</span><strong>Amphipod</strong></div></div></div></div>
+                    <div class="flip-card right"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.pixabay.com/photo/2025/03/19/00/49/mariana-snailfish-9479400_960_720.png" alt="Snailfish" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Snailfish</strong></div></div></div></div>
+                    <div class="flip-card left"><div class="flip-inner"><div class="flip-front"><img src="https://static.wikia.nocookie.net/dredge/images/b/b9/Rattail_Image.png/revision/latest/smart/width/250/height/250?cb=20230426190645" alt="Hadalfish" class="animal-img"></div><div class="flip-back"><div class="back-content"><span>This is a</span><strong>Hadalfish</strong></div></div></div></div>
+                </div>
+            </section>
+
+            <section class="layer" id="quiz-zone">
+                <div class="zone-info">
+                    <h2>Ocean Knowledge Check</h2>
+                    <p>Test your learning progression level by level.</p>
+                </div>
+                
+                <div class="quiz-container">
+                    <div id="quiz-questions-wrapper">
+                        <div class="quiz-card active" data-step="1">
+                            <span class="step-indicator">Question 1 of 5</span>
+                            <p class="question">In which ocean zone can you find bioluminescent creatures like the Anglerfish?</p>
+                            <div class="options">
+                                <button class="quiz-btn" data-correct="false">Sunlight Zone</button>
+                                <button class="quiz-btn" data-correct="true">Midnight Zone</button>
+                                <button class="quiz-btn" data-correct="false">The Beach Floor</button>
+                            </div>
+                            <p class="feedback-text"></p>
+                        </div>
+
+                        <div class="quiz-card" data-step="2">
+                            <span class="step-indicator">Question 2 of 5</span>
+                            <p class="question">Which animal is characterized by a hard shell and belongs to the Sunlight Zone?</p>
+                            <div class="options">
+                                <button class="quiz-btn" data-correct="true">Turtle</button>
+                                <button class="quiz-btn" data-correct="false">Jellyfish</button>
+                                <button class="quiz-btn" data-correct="false">Dumbo Octopus</button>
+                            </div>
+                            <p class="feedback-text"></p>
+                        </div>
+
+                        <div class="quiz-card" data-step="3">
+                            <span class="step-indicator">Question 3 of 5</span>
+                            <p class="question">The deepest canyons on Earth are found in which layer?</p>
+                            <div class="options">
+                                <button class="quiz-btn" data-correct="false">The Abyss</button>
+                                <button class="quiz-btn" data-correct="false">Twilight Zone</button>
+                                <button class="quiz-btn" data-correct="true">The Trenches</button>
+                            </div>
+                            <p class="feedback-text"></p>
+                        </div>
+
+                        <div class="quiz-card" data-step="4">
+                            <span class="step-indicator">Question 4 of 5</span>
+                            <p class="question">What English name corresponds to the animal represented by the emoji "🪼"?</p>
+                            <div class="options">
+                                <button class="quiz-btn" data-correct="false">Squid</button>
+                                <button class="quiz-btn" data-correct="true">Jellyfish</button>
+                                <button class="quiz-btn" data-correct="false">Crab</button>
+                            </div>
+                            <p class="feedback-text"></p>
+                        </div>
+
+                        <div class="quiz-card" data-step="5">
+                            <span class="step-indicator">Question 5 of 5</span>
+                            <p class="question">Complete the statement: "The **Dumbo Octopus** lives under extreme pressure in..." </p>
+                            <div class="options">
+                                <button class="quiz-btn" data-correct="true">The Abyss</button>
+                                <button class="quiz-btn" data-correct="false">Sunlight Zone</button>
+                                <button class="quiz-btn" data-correct="false">Twilight Zone</button>
+                            </div>
+                            <p class="feedback-text"></p>
+                        </div>
+                    </div>
+
+                    <div class="quiz-controls" id="quiz-navigation-controls">
+                        <button id="prev-question-btn" class="nav-control-btn" disabled>← Previous</button>
+                        <button id="next-question-btn" class="nav-control-btn">Next →</button>
+                    </div>
+
+                    <div id="scoreboard" class="score-banner hidden-content">
+                        </div>
+                </div>
+                
+                <footer class="final-footer">
+                    <p><strong>&copy; Paula Tabares • Mike Fuentes • Sara Andrade</strong></p>
+                    <p>SENA 2026</p>
+                </footer>
+            </section>
+        </main>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

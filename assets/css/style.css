@@ -1,0 +1,565 @@
+:root {
+    --sand: #f2d2a9;
+    --sunlight: #00b4d8;
+    --deep-blue: #023e8a;
+    --midnight-blue: #03045e;
+    --dark-void: #000000;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    text-align: center; 
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
+
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    background-color: var(--dark-void); 
+    color: white; 
+    overflow-x: hidden; 
+}
+
+/* ==========================================================================
+   WELCOME SCREEN (INTRO LANDING INTERFACE)
+   ========================================================================== */
+#welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, #023e8a 0%, #03045e 60%, #000000 100%);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+}
+
+.welcome-bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.1) 3px, transparent 4px),
+        radial-gradient(circle, rgba(255,255,255,0.06) 6px, transparent 7px);
+    background-size: 120px 180px, 200px 300px;
+    animation: welcomeFloat 15s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes welcomeFloat {
+    0% { background-position: 0 0, 0 0; }
+    100% { background-position: 50px -600px, -50px -300px; }
+}
+
+.welcome-content {
+    width: 90%;
+    max-width: 650px;
+    z-index: 5;
+}
+
+.welcome-badge {
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: var(--sunlight);
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.welcome-title {
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.welcome-subtitle {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 35px;
+}
+
+#start-journey-btn {
+    background: var(--sunlight);
+    color: var(--midnight-blue);
+    border: none;
+    padding: 16px 40px;
+    border-radius: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0, 180, 216, 0.4);
+    transition: all 0.3s ease;
+}
+
+#start-journey-btn:hover {
+    transform: translateY(-3px);
+    background: white;
+    box-shadow: 0 12px 30px rgba(255,255,255,0.5);
+}
+
+.hidden-content { display: none !important; }
+
+#welcome-screen.fade-out {
+    transform: translateY(-100vh);
+    opacity: 0;
+}
+
+/* ==========================================================================
+   SCROLL PROGRESS BAR
+   ========================================================================== */
+.progress-container { 
+    position: fixed; 
+    top: 0; 
+    z-index: 1000; 
+    width: 100%; 
+    height: 8px; 
+    background: rgba(255,255,255,0.2); 
+}
+
+.progress-bar { 
+    height: 8px; 
+    background: linear-gradient(to right, var(--sunlight), var(--deep-blue)); 
+    width: 0%; 
+}
+
+/* ==========================================================================
+   HEADER AND BEACH HERO SECTION
+   ========================================================================== */
+.beach-header { 
+    height: 100vh; 
+    background: var(--sand); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: relative; 
+    overflow: hidden; 
+}
+
+.sun-decoration { 
+    position: absolute; 
+    top: 10px; 
+    right: 10px; 
+    font-size: clamp(4rem, 12vw, 7rem); 
+    filter: drop-shadow(0 0 20px orange); 
+    z-index: 5; 
+}
+
+.palm { 
+    position: absolute; 
+    font-size: clamp(10rem, 22vw, 16rem); 
+    bottom: -20px; 
+    z-index: 15; 
+}
+
+.palm-left { left: -50px; transform: rotate(-15deg); }
+.palm-right { right: -50px; transform: rotate(15deg); }
+
+.header-content { 
+    z-index: 20; 
+    color: #5c4033; 
+    width: 90%; 
+    max-width: 800px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    padding-top: 40px; 
+}
+
+.main-title { 
+    font-size: clamp(2.8rem, 9vw, 4.5rem); 
+    font-weight: 900; 
+    text-transform: uppercase; 
+    margin-bottom: 15px; 
+    line-height: 1; 
+}
+
+.project-description { 
+    background: rgba(255,255,255,0.4); 
+    padding: 20px; 
+    border-radius: 20px; 
+    margin-bottom: 20px; 
+    font-weight: 600; 
+    line-height: 1.4; 
+    font-size: 0.95rem; 
+    width: 100%; 
+}
+
+/* SEARCH BAR */
+.search-box { 
+    width: 100%; 
+    max-width: 450px; 
+    margin-bottom: 25px; 
+    z-index: 30; 
+}
+
+#speciesSearch { 
+    width: 100%; 
+    padding: 12px 25px; 
+    border-radius: 25px; 
+    border: 2px solid #5c4033; 
+    font-size: 1rem; 
+    font-family: 'Montserrat', sans-serif; 
+    outline: none; 
+    background: rgba(255,255,255,0.85); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+    transition: 0.3s ease; 
+}
+
+#speciesSearch:focus { 
+    background: #ffffff; 
+    border-color: #023e8a; 
+}
+
+.header-nav { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 8px; 
+    width: 100%; 
+}
+
+.btn { 
+    text-decoration: none; 
+    background: #5c4033; 
+    color: white; 
+    padding: 10px 14px; 
+    border-radius: 25px; 
+    font-weight: 900; 
+    font-size: 0.75rem; 
+    border: 2px solid white; 
+    transition: 0.3s; 
+    flex: 0 1 auto; 
+}
+
+.btn:hover { 
+    background: white; 
+    color: #5c4033; 
+    border-color: #5c4033; 
+}
+
+.sand-floor { 
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    height: 40px; 
+    background: #e6be8a; 
+    border-radius: 50% 50% 0 0; 
+}
+
+/* ==========================================================================
+   OCEAN LAYERS SYSTEM WITH PARALLAX BACKGROUND
+   ========================================================================== */
+.ocean-body { 
+    background: linear-gradient(to bottom, var(--sand) 0%, var(--sunlight) 5%, var(--deep-blue) 35%, var(--midnight-blue) 70%, var(--dark-void) 100%); 
+    position: relative; 
+    z-index: 2; 
+}
+
+.ocean-body::before { 
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.12) 2px, transparent 3px), 
+        radial-gradient(circle, rgba(255,255,255,0.08) 4px, transparent 5px); 
+    background-size: 90px 140px, 160px 240px; 
+    animation: floatingBubbles 25s linear infinite; 
+    pointer-events: none; 
+    z-index: 1; 
+}
+
+@keyframes floatingBubbles { 
+    0% { background-position: 0px 0px, 0px 0px; } 
+    100% { background-position: 40px -1000px, -60px -500px; } 
+}
+
+.layer { 
+    min-height: 120vh; 
+    padding: 80px 5vw; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    position: relative; 
+    z-index: 5; 
+}
+
+.zone-info { margin-bottom: 40px; max-width: 600px; }
+.zone-info h2 { font-size: clamp(2.2rem, 7vw, 3.2rem); font-weight: 900; margin-bottom: 10px; }
+
+/* ZIG-ZAG STRUCTURE */
+.zigzag-container { 
+    display: flex; 
+    flex-direction: column; 
+    width: 100%; 
+    max-width: 500px; 
+    gap: 30px; 
+    margin: 0 auto; 
+}
+
+.flip-card { 
+    width: 180px; 
+    height: 180px; 
+    perspective: 1000px; 
+    align-self: center; 
+    transition: opacity 0.4s ease, transform 0.4s ease; 
+    opacity: 1; 
+}
+
+.left { transform: translateX(-40px); }
+.right { transform: translateX(40px); }
+
+.flip-inner { 
+    position: relative; 
+    width: 100%; 
+    height: 100%; 
+    transition: transform 0.6s; 
+    transform-style: preserve-3d; 
+}
+
+.flip-card:active .flip-inner, 
+.flip-card:hover .flip-inner { 
+    transform: rotateY(180deg); 
+}
+
+.flip-front, 
+.flip-back { 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    backface-visibility: hidden; 
+    border-radius: 50%; 
+    border: 4px solid white; 
+    overflow: hidden; 
+}
+
+.flip-front { 
+    background: rgba(255,255,255,0.15); 
+    font-size: 5.5rem; 
+    backdrop-filter: blur(3px); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.flip-back { 
+    background: var(--deep-blue); 
+    transform: rotateY(180deg); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.back-content { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    height: 100%; 
+    padding: 15px; 
+}
+
+.back-content span { font-size: 0.85rem; font-weight: 300; margin-bottom: 5px; display: block; width: 100%; }
+.back-content strong { font-size: 1.3rem; font-weight: 900; text-transform: uppercase; display: block; width: 100%; line-height: 1.1; }
+.animal-img { width: 80%; height: 80%; object-fit: contain; }
+
+/* ==========================================================================
+   EVALUATION SYSTEM (STEP SLIDER SLICK MODE)
+   ========================================================================== */
+.quiz-container { 
+    width: 100%; 
+    max-width: 600px; 
+    margin: 20px auto 50px auto; 
+    background: rgba(255, 255, 255, 0.08); 
+    padding: 35px; 
+    border-radius: 25px; 
+    backdrop-filter: blur(8px); 
+    border: 2px solid rgba(255, 255, 255, 0.15); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+    position: relative;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.quiz-card {
+    display: none; 
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.quiz-card.active {
+    display: block; 
+    opacity: 1;
+}
+
+.step-indicator {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: var(--sunlight);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.question { font-size: 1.25rem; font-weight: 600; margin-bottom: 25px; line-height: 1.4; text-align: left; }
+.options { display: flex; flex-direction: column; gap: 14px; }
+
+.quiz-btn { 
+    background: transparent; 
+    color: white; 
+    border: 2px solid rgba(255,255,255,0.6); 
+    padding: 14px; 
+    border-radius: 30px; 
+    cursor: pointer; 
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 600; 
+    font-size: 1rem; 
+    transition: 0.3s ease; 
+}
+
+.quiz-btn:hover:not(:disabled) { background: rgba(255, 255, 255, 0.2); border-color: white; }
+.quiz-btn.selected-correct { background-color: #2a9d8f !important; border-color: #2a9d8f !important; }
+.quiz-btn.selected-incorrect { background-color: #e63946 !important; border-color: #e63946 !important; }
+.quiz-btn:disabled { cursor: not-allowed; }
+.feedback-text { margin-top: 15px; font-weight: 900; font-size: 1.1rem; min-height: 25px; text-align: left; }
+
+/* SLIDER CONTROLS NAVIGATION */
+.quiz-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+}
+
+.nav-control-btn {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 10px 22px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.nav-control-btn:hover:not(:disabled) {
+    background: white;
+    color: var(--midnight-blue);
+}
+
+.nav-control-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* ==========================================================================
+   ADVANCED SCOREBOARD DISPLAY CARD
+   ========================================================================== */
+.score-banner {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid #2a9d8f;
+    box-shadow: 0 15px 35px rgba(42, 157, 143, 0.2);
+    text-align: center;
+    animation: slideUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.score-banner h3 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #2a9d8f;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.metric-box {
+    background: rgba(255,255,255,0.04);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.metric-box span {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.metric-box strong {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 900;
+}
+
+.feedback-evaluation-box {
+    background: rgba(42, 157, 143, 0.1);
+    border-left: 4px solid #2a9d8f;
+    padding: 20px;
+    border-radius: 0 12px 12px 0;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.feedback-evaluation-box h4 {
+    font-size: 1.1rem;
+    color: var(--sunlight);
+    font-weight: 900;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.feedback-evaluation-box p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.9);
+}
+
+.final-footer { padding: 60px 20px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 80px; width: 100%; font-size: 0.9rem; }
+
+/* DESKTOP RESPONSIVE CONFIGURATION */
+@media (min-width: 900px) {
+    .zigzag-container { flex-direction: row; flex-wrap: wrap; justify-content: center; max-width: 1100px; gap: 70px; }
+    .left, .right { transform: translateX(0); }
+    .flip-card:nth-child(even) { transform: translateY(50px); }
+    .btn { padding: 12px 20px; font-size: 0.85rem; }
+}
